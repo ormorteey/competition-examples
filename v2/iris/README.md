@@ -1,8 +1,8 @@
 # Iris
 
-### Codalab V2 competition bundle
+### Codabench competition bundle
 
-This is a collection of files containing the `competition.yaml` which defines different aspects and attributes of the competition, the logo, the html pages documenting the competition, and the data associated with it. The goal is to provide a ready-to-use template for competition creation on [Codalab V2](https://github.com/codalab/competitions-v2).
+This is a collection of files containing the `competition.yaml` which defines different aspects and attributes of the competition, the logo, the html pages documenting the competition, and the data associated with it. The goal is to provide a ready-to-use template for competition creation on [Codabench](https://github.com/codalab/codabench).
 
 This example is a classification task. The challenge can handle result submissions and code submissions.
 
