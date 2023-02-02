@@ -1,0 +1,2 @@
+RedirectMatch 301 ^/v2/(.*)$ /codabench/$1
+RedirectMatch 301 ^/basic-competition-bundles/(.*)$ /codalab/$1
