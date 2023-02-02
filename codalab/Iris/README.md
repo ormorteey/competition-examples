@@ -182,7 +182,4 @@ You can easily turn this competition into a result submission ONLY competition:
 
 [-] Results Scoring Only
 
-### Generate this example with Chalab
-
-To generate this example with [Chalab](http://chalab.lri.fr), download the examples of [data and code](https://github.com/codalab/competition-examples/tree/master/chalab-examples). You can use this as a template to create new competitions. 
 
