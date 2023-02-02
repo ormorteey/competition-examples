@@ -5,11 +5,11 @@ This repository contains competition bundle examples for [CodaLab Competitions](
 
 ### Folders
 
-* [basic-competition-bundles/](basic-competition-bundles/): Examples of competitions directed to beginning organizers.
-             
-* [developers/](developers/): Older (v1) examples that developer and advanced users can check into and/or update.
+* [codalab/](codalab/): Examples of competitions directed to beginning organizers, on CodaLab Competitions.
 
-* [v2/](v2/): Codabench examples.
+* [codabench/](codabench/): Codabench examples.
+             
+* [developers/](developers/): Older (CodaLab Competitions) examples that developer and advanced users can check into and/or update.
 
 ### Tutorial: how to organize a challenge on CodaLab Competitions
 
