@@ -50,26 +50,26 @@ _You can also use Github's web interface to clone the repository._
 
 ### 2. Copy and edit a competition template
 
-The competition bundles for [CodaLab Competitions](https://github.com/codalab/codalab-competitions) can be found in the [basic-competition-bundles/](basic-competition-bundles/) folder.
+The competition bundles for [CodaLab Competitions](https://github.com/codalab/codalab-competitions) can be found in the [codalab/](codalab/) folder.
 
 ```
-cd competition-examples/basic-competition-bundles/
+cd competition-examples/codalab/
 ```
 
 Here you can find three templates:
 
-* [Compute Pi](basic-competition-bundles/Compute_pi), a very simple competition with **code submission** where participants have to estimate the value of pi.
+* [Compute Pi](codalab/Compute_pi), a very simple competition with **code submission** where participants have to estimate the value of pi.
 
-* [Iris Challenge](basic-competition-bundles/Iris), a simple **machine learning competition template** which features training/validation/test data, results and code submissions and multiple phases.
+* [Iris Challenge](codalab/Iris), a simple **machine learning competition template** which features training/validation/test data, results and code submissions and multiple phases.
 
-* [Yellow World](basic-competition-bundles/Yellow_world), a very basic template of competition with **result submission**.
+* [Yellow World](codalab/Yellow_world), a very basic template of competition with **result submission**.
 
 
 #### What is a competition bundle?
 
 A competition bundle is a ZIP file containing all the pieces of your competition: the data, the documentation, the scoring program and the configuration settings.
 
-Let's see what we have inside the [Compute Pi](basic-competition-bundles/Compute_pi) bundle:
+Let's see what we have inside the [Compute Pi](codalab/Compute_pi) bundle:
 
 ```
 ls -1 Compute_pi/compute_pi_competition_bundle/
