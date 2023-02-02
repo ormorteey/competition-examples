@@ -1,8 +1,8 @@
 # Build an example competition
 ---
-title: Example Competition
-description: This is a competition to test the competition bundle system. It should be able to create a competition from this bundle.
-image: logo.jpg
+title: Tree Competition
+description: This is a competition about a tree.
+image: logo2.jpg
 has_registration: True
 force_submission_to_leaderboard: True
 end_date: 
