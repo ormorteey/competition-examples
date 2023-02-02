@@ -1,13 +1,13 @@
 # The Yaml file contains the main parameters describing the challenge.
-version: 2
+# You can learn more about the possible settings here: # More options here: https://github.com/codalab/codabench/wiki/Yaml-Structure
+
+# Main settings
+version: 2 # this means that it is a Codabench bundle
 title: Iris
 description: The well known Iris dataset from Fisher's classic paper (Fisher, 1936).
 image: logo.png
 registration_auto_approve: True  # do not require approval from admin to join the comp
-
-# TODO: old useful parameters
-#admin_names: pavao
-#competition_docker_image: 'codalab/codalab-legacy:py37'
+docker_image: 'codalab/codalab-legacy:py37'
 
 # Documentation web pages
 terms: pages/terms.html
@@ -71,7 +71,7 @@ phases:
   tasks:
   - 1
   solutions: []
-  
+
 # Leaderboard
 leaderboards:
 - index: 0
@@ -90,4 +90,3 @@ leaderboards:
     sorting: desc
     computation: null
     computation_indexes: null
-    
