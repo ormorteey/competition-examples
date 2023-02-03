@@ -8,6 +8,7 @@ import torch
 
 # Run nvidia-smi command to check if the GPU is working
 os.system('nvidia-smi')
+print() # line break
 
 # Paths
 input_dir = sys.argv[1]
