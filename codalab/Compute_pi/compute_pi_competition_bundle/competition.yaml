@@ -1,12 +1,12 @@
 # Build an example competition
 ---
-title: Tree Competition
-description: This is a competition about a tree.
-image: logo2.jpg
+title: Compute Pi Competition
+description: This is a competition about computing pi.
+image: logo.jpg
 has_registration: True
 force_submission_to_leaderboard: True
-end_date: 
-html: 
+end_date:
+html:
     overview: overview.html
     evaluation: evaluation.html
     terms: terms_and_conditions.html

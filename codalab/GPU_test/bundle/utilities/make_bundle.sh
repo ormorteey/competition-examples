@@ -13,10 +13,10 @@
 # assets/
 #
 # 3) zipping and moving to tmp/ the contents or the following dirs
-# public_data/
-# reference_data/
-# starting_kit/
-# scoring_program/
+# dataset/
+# reference/
+# program/
+# submission/
 
 # Clear last output
 #echo 'Cleaning output files of last local execution...'
@@ -44,11 +44,11 @@ cp -r '../assets' $DIR
 cd .. # bundle/
 
 # Begin zipping each folder
-for filename in input_data_1_2 reference_data_1 reference_data_2 scoring_program ingestion_program starting_kit
+for filename in dataset reference program submission
 do
   cd $filename
   echo 'Zipping: '$filename
-  zip -o -r --exclude=*.git* --exclude=*__pycache__* --exclude=*.DS_Store* --exclude=*public_data* "../utilities/"$DIR$filename .;
+  zip -o -r --exclude=*.git* --exclude=*__pycache__* --exclude=*.DS_Store* "../utilities/"$DIR$filename .;
   cd .. # bundle/
 done
 
