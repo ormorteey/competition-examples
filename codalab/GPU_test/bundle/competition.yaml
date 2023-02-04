@@ -34,3 +34,4 @@ leaderboard:
             leaderboard: *RESULTS
             label: GPU Available
             numeric_format: 2
+            rank: 1
