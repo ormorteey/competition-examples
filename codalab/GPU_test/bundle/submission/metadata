@@ -1,1 +1,2 @@
+command: python $program/submission.py $input $output
 description: Test submission.

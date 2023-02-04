@@ -30,7 +30,7 @@ leaderboard:
             label: Results
             rank: 1
     columns:
-        passed:
+        gpu_available:
             leaderboard: *RESULTS
             label: GPU Available
             numeric_format: 2
