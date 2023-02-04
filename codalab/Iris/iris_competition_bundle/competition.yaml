@@ -1,4 +1,5 @@
-# Competition YAML file : general challenge defition
+# Competition YAML file : general challenge defition and settings
+title: Iris
 admin_names: guyon,lsenta,pavao
 allow_public_submissions: true
 allow_teams: false
@@ -13,6 +14,9 @@ enable_per_submission_metadata: false
 end_date: null
 force_submission_to_leaderboard: true
 has_registration: false
+show_datasets_from_yaml: true
+
+# Documentation pages
 html:
   data: data.html
   evaluation: evaluation.html
@@ -58,23 +62,22 @@ phases:
     reference_data: reference_data_2.zip
     scoring_program: scoring_program.zip
     start_date: 2020-02-15 18:53:00+00:00 # YYYY-MM-DD
-show_datasets_from_yaml: true
-title: Iris
 
 # Leaderboard
 leaderboard:
-  columns:
-    Duration:
-      label: Duration
-      leaderboard: &id001
+    leaderboards:
+        Results: *id001
         label: Results
         rank: 1
-      numeric_format: 2
-      rank: 7
-    set1_score:
-      label: Prediction score
-      leaderboard: *id001
-      numeric_format: 4
-      rank: 2
-  leaderboards:
-    Results: *id001
+    
+    columns:
+        Duration:
+            label: Duration
+            leaderboard: &id001
+            numeric_format: 2
+            rank: 7
+        set1_score:
+            label: Prediction score
+            leaderboard: *id001
+            numeric_format: 4
+            rank: 2
