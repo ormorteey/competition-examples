@@ -65,19 +65,19 @@ phases:
 
 # Leaderboard
 leaderboard:
-    leaderboards:
-        Results: *id001
+  leaderboards:
+    Results: &RESULTS
         label: Results
         rank: 1
-    
-    columns:
-        Duration:
-            label: Duration
-            leaderboard: &id001
-            numeric_format: 2
-            rank: 7
-        set1_score:
-            label: Prediction score
-            leaderboard: *id001
-            numeric_format: 4
-            rank: 2
+
+  columns:
+    set1_score:
+      label: Prediction score
+      leaderboard: *RESULTS
+      numeric_format: 4
+      rank: 1
+    Duration:
+      label: Duration
+      leaderboard: *RESULTS
+      numeric_format: 2
+      rank: 2
