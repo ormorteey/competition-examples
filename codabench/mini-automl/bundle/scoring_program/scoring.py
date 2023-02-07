@@ -7,9 +7,10 @@ import pandas as pd
 from sklearn.metrics import accuracy_score
 
 # Path
-reference_dir = os.path.join('/app/input/', 'ref')  # Ground truth data
-prediction_dir = os.path.join('/app/input/', 'res') # Prediction made by the model
+input_dir = '/app/input'    # Input from ingestion program
 output_dir = '/app/output/' # To write the scores
+reference_dir = os.path.join(input_dir, 'ref')  # Ground truth data
+prediction_dir = os.path.join(input_dir, 'res') # Prediction made by the model
 score_file = os.path.join(output_dir, 'scores.json')          # Scores
 html_file = os.path.join(output_dir, 'detailed_results.html') # Detailed feedback
 

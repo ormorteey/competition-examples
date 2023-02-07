@@ -16,8 +16,11 @@ input_dir = '/app/input_data/' # Data
 output_dir = '/app/output/'    # For the predictions
 program_dir = '/app/program'
 submission_dir = '/app/ingested_program' # The code submitted
+sys.path.append(output_dir)
 sys.path.append(program_dir)
 sys.path.append(submission_dir)
+
+
 
 def get_dataset_names():
     """ Return the names of the datasets.
