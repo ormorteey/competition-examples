@@ -2,9 +2,9 @@
 # It is a simple machine learning classifier.
 
 import numpy as np
-from sklearn.ensemble import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier
 
-class model:
+class Model:
     def __init__(self):
         """ <ADD DOCUMENTATION HERE>
         """

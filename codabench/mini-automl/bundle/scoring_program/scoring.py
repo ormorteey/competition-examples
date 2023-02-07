@@ -1,3 +1,6 @@
+# The scoring program compute scores from:
+# - The ground truth
+# - The predictions made by the candidate model
 
 # Imports
 import json
@@ -28,7 +31,7 @@ def get_dataset_names():
 def get_data(dataset):
     """ Get ground truth (y_test) and predictions (y_pred) from the dataset name.
     """
-    y_test = pd.read_csv(os.path.join(reference_dir, dataset + 'reference_test.csv'))
+    y_test = pd.read_csv(os.path.join(reference_dir, dataset + '_reference_test.csv'))
     y_test = np.array(y_test)
     y_pred = np.genfromtxt(os.path.join(prediction_dir, dataset + '.predict'))
     return y_test, y_pred
@@ -41,24 +44,21 @@ def print_bar():
 def main():
     """ The scoring program.
     """
-    print('Scoring program.')
     print_bar()
+    print('Scoring program.')
     # Initialized detailed results
     write_file(html_file, '<t1>Detailed results</t1>') # Create the file to give real-time feedback
     scores = {}
     for dataset in get_dataset_names(): # Loop over datasets
         print_bar()
         print(dataset)
-        print_bar()
         # Read data
         print('Reading prediction')
         y_test, y_pred = get_data(dataset)
-        print_bar()
         # Compute score
-        accuracy = accuracy_score(y_true, y_pred)
+        accuracy = accuracy_score(y_test, y_pred)
         print('Accuracy: {}'.format(accuracy))
         scores[dataset] = accuracy
-        print_bar()
     # Get duration
     with open(os.path.join(prediction_dir, 'metadata.json')) as f:
         duration = json.load(f).get('duration', -1)

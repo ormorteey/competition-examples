@@ -20,8 +20,6 @@ sys.path.append(output_dir)
 sys.path.append(program_dir)
 sys.path.append(submission_dir)
 
-
-
 def get_dataset_names():
     """ Return the names of the datasets.
     """
@@ -46,45 +44,36 @@ def print_bar():
 def main():
     """ The ingestion program.
     """
-    print('Ingestion program.')
     print_bar()
+    print('Ingestion program.')
     from model import Model # The model submitted by the participant
     start = time.time()
     for dataset in get_dataset_names(): # Loop over datasets
         print_bar()
         print(dataset)
-        print_bar()
         # Read data
         print('Reading data')
-        X_train, y_train = get_training_data()
-        X_test = get_prediction_data()
-        print_bar()
+        X_train, y_train, X_test = get_data(dataset)
         # Initialize model
         print('Initializing the model')
         m = Model()
-        print_bar()
         # Train model
         print('Training the model')
         m.fit(X_train, y_train)
-        print_bar()
         # Make predictions
         print('Making predictions')
         y_pred = m.predict(X_test)
-        print_bar()
         # Save predictions
         np.savetxt(os.path.join(output_dir, dataset + '.predict'), y_pred)
-        print_bar()
         duration = time.time() - start
         print(f'Time elapsed so far: {duration}')
-        print_bar()
     # End
     duration = time.time() - start
     print(f'Completed. Total duration: {duration}')
     with open(os.path.join(output_dir, 'metadata.json'), 'w+') as f:
         json.dump({'duration': duration}, f)
-    print_bar()
     print('Ingestion program finished. Moving on to scoring')
-
+    print_bar()
 
 if __name__ == '__main__':
     main()
