@@ -76,38 +76,50 @@ phases:
   - 1
   solutions: []
 
+# Fact sheets to add more information in the leaderboard
+fact_sheet: {
+    "method_name": {
+        "key": "method_name",
+        "type": "text",
+        "title": "Method name",
+        "selection": "",
+        "is_required": "false",
+        "is_on_leaderboard": "true"
+    }
+}
+
 # Leaderboard
 leaderboards:
 - index: 0
   title: Results
   key: Results
   columns:
-      - title: Dataset 1
-        key: dataset1
-        index: 0
-        sorting: desc
-      - title: Dataset 2
-        key: dataset2
-        index: 1
-        sorting: desc
-      - title: Dataset 3
-        key: dataset3
-        index: 2
-        sorting: desc
-      - title: Dataset 4
-        key: dataset4
-        index: 3
-        sorting: desc
       - title: Average Accuracy
         key: avg_accuracy
-        index: 4
+        index: 0
         sorting: desc
         computation: avg
         computation_indexes:
-          - 0
           - 1
           - 2
           - 3
+          - 4
+      - title: Dataset 1
+        key: dataset1
+        index: 1
+        sorting: desc
+      - title: Dataset 2
+        key: dataset2
+        index: 2
+        sorting: desc
+      - title: Dataset 3
+        key: dataset3
+        index: 3
+        sorting: desc
+      - title: Dataset 4
+        key: dataset4
+        index: 4
+        sorting: desc
       - title: Duration
         key: duration
         index: 5
