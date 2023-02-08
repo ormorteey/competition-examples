@@ -1,6 +1,5 @@
 from sklearn.cluster import MiniBatchKMeans
 
-
 class Model:
     def __init__(self):
         self.kmeans = MiniBatchKMeans(n_clusters=3)
