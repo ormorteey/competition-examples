@@ -8,6 +8,7 @@ import os
 import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score
+import matplotlib.pyplot as plt
 
 # Path
 input_dir = '/app/input'    # Input from ingestion program
@@ -20,7 +21,7 @@ html_file = os.path.join(output_dir, 'detailed_results.html') # Detailed feedbac
 def write_file(file, content):
     """ Write content in file.
     """
-    with open(file, 'w', encoding="utf-8") as f:
+    with open(file, 'a', encoding="utf-8") as f:
         f.write(content)
 
 def get_dataset_names():
@@ -41,13 +42,21 @@ def print_bar():
     """
     print('-' * 10)
 
+def make_figure(scores, filename):
+    x = get_dataset_names()
+    y = [scores[dataset] for dataset in x]
+    plt.plot(x, y, 'bo')
+    plt.ylabel('accuracy')
+    plt.title('Submission results')
+    plt.savefig(filename)
+
 def main():
     """ The scoring program.
     """
     print_bar()
     print('Scoring program.')
     # Initialized detailed results
-    write_file(html_file, '<t1>Detailed results</t1>') # Create the file to give real-time feedback
+    write_file(html_file, '<h1>Detailed results</h1>') # Create the file to give real-time feedback
     scores = {}
     for dataset in get_dataset_names(): # Loop over datasets
         print_bar()
@@ -68,6 +77,11 @@ def main():
     print('Scoring program finished. Writing scores.')
     print(scores)
     write_file(score_file, json.dumps(scores))
+    # Create a figure for detailed results
+    figure_name = 'figure.png'
+    figure_path = os.path.join(output_dir, figure_name)
+    make_figure(scores, figure_path)
+    write_file(html_file, '<img src="{}">'.format(figure_name))
 
 if __name__ == '__main__':
     main()
