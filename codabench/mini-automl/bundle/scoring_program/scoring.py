@@ -5,10 +5,12 @@
 # Imports
 import json
 import os
+import matplotlib.pyplot as plt
+import io
+import base64
 import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score
-import matplotlib.pyplot as plt
 
 # Path
 input_dir = '/app/input'    # Input from ingestion program
@@ -42,13 +44,21 @@ def print_bar():
     """
     print('-' * 10)
 
-def make_figure(scores, filename):
+def make_figure(scores):
     x = get_dataset_names()
     y = [scores[dataset] for dataset in x]
-    plt.plot(x, y, 'bo')
-    plt.ylabel('accuracy')
-    plt.title('Submission results')
-    plt.savefig(filename)
+    fig, ax = plt.subplots()
+    ax.plot(x, y, 'bo')
+    ax.set_ylabel('accuracy')
+    ax.set_title('Submission results')
+    return fig
+
+def fig_to_b64(fig):
+    buf = io.BytesIO()
+    fig.savefig(buf, format='png')
+    buf.seek(0)
+    fig_b64 = base64.b64encode(buf.getvalue()).decode('ascii')
+    return fig_b64
 
 def main():
     """ The scoring program.
@@ -78,10 +88,8 @@ def main():
     print(scores)
     write_file(score_file, json.dumps(scores))
     # Create a figure for detailed results
-    figure_name = 'figure.png'
-    figure_path = os.path.join(output_dir, figure_name)
-    make_figure(scores, figure_path)
-    write_file(html_file, '<img src="{}">'.format(figure_name))
+    figure = fig_to_b64(make_figure(scores))
+    write_file(html_file, f'<img src="data:image/png;base64,{figure}">')
 
 if __name__ == '__main__':
     main()
