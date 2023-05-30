@@ -55,7 +55,7 @@ phases:
   end: 1-30-2020
   max_submissions_per_day: 5
   max_submissions: 100
-  execution_time_limit_ms: 500
+  execution_time_limit: 500
   tasks:
   - 0
   solutions: []
@@ -67,7 +67,7 @@ phases:
   start: 2-1-2020 # Never ends
   max_submissions_per_day: 0
   max_submissions: 100
-  execution_time_limit_ms: 500
+  execution_time_limit: 500
   tasks:
   - 1
   solutions: []
