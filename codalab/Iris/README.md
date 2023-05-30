@@ -182,4 +182,4 @@ You can easily turn this competition into a result submission ONLY competition:
 
 [-] Results Scoring Only
 
-
+![logo](iris_competition_bundle/logo.png)

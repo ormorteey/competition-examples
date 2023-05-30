@@ -52,11 +52,16 @@ def read_array(filename):
     return array
 
 
+def get_maxi_mini(array):
+    a = np.ravel(array)
+    maxi = np.nanmax(np.array(list(filter(lambda x: x != float('inf'), a))))  # Max except NaN and Inf
+    mini = np.nanmin(np.array(list(filter(lambda x: x != float('-inf'), a))))  # Mini except NaN and Inf
+    return maxi, mini
+
+
 def sanitize_array(array):
     ''' Replace NaN and Inf (there should not be any!)'''
-    a = np.ravel(array)
-    maxi = np.nanmax((filter(lambda x: x != float('inf'), a)))  # Max except NaN and Inf
-    mini = np.nanmin((filter(lambda x: x != float('-inf'), a)))  # Mini except NaN and Inf
+    maxi, mini = get_maxi_mini(array)
     array[array == float('inf')] = maxi
     array[array == float('-inf')] = mini
     mid = (maxi + mini) / 2
@@ -71,9 +76,7 @@ def normalize_array(solution, prediction):
     In principle, this should not do anything to properly formatted
     classification inputs and outputs.'''
     # Binarize solution
-    sol = np.ravel(solution)  # convert to 1-d array
-    maxi = np.nanmax((filter(lambda x: x != float('inf'), sol)))  # Max except NaN and Inf
-    mini = np.nanmin((filter(lambda x: x != float('-inf'), sol)))  # Mini except NaN and Inf
+    maxi, mini = get_maxi_mini(solution)
     if maxi == mini:
         print('Warning, cannot normalize')
         return [solution, prediction]

@@ -15,3 +15,4 @@ References and credits:
 * The competition protocol was designed by Isabelle Guyon. 
 * The competition bundle was adapted to Codalab V2 by Adrien Pavao.
 
+![logo](bundle/logo.png)

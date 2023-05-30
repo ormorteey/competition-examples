@@ -60,8 +60,8 @@ if __name__ == "__main__":
         output_dir = argv[2]
         # Create the output directory, if it does not already exist and open output files
     mkdir(output_dir)
-    score_file = open(os.path.join(output_dir, 'scores.txt'), 'wb')
-    html_file = open(os.path.join(output_dir, 'scores.html'), 'wb')
+    score_file = open(os.path.join(output_dir, 'scores.txt'), 'w')
+    html_file = open(os.path.join(output_dir, 'scores.html'), 'w')
 
     # Get the metric
     metric_name, scoring_function = _load_scoring_function()
@@ -108,8 +108,7 @@ if __name__ == "__main__":
                 "======= Set %d" % set_num + " (" + basename.capitalize() + "): score(" + score_name + ")=ERROR =======")
             html_file.write(
                 "======= Set %d" % set_num + " (" + basename.capitalize() + "): score(" + score_name + ")=ERROR =======\n")
-            print
-            inst
+            print(inst)
 
         # Write score corresponding to selected task and metric to the output file
         score_file.write(score_name + ": %0.12f\n" % score)
