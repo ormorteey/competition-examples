@@ -1,0 +1,2 @@
+command: python $program/MNIST_score.py $input $output
+description: Compute scores for the competition
