@@ -2,6 +2,7 @@ import sys
 import subprocess
 import os, os.path
 from glob import glob
+from sklearn.metrics import accuracy_score
 
 def pip_install_package(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -81,5 +82,5 @@ if __name__ == "__main__":
         accuracy = score_fn(submission_file, truth_file)
         # accuracy = score_fn(truth_file, truth_file)
         print(f"Accuracy: {accuracy}")
-        output_file.write(f"Accuracy: {accuracy}")
+        output_file.write(f"Accuracy:{accuracy}")
         output_file.close()
